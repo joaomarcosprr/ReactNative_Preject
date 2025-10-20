@@ -1,4 +1,4 @@
-import { Stack, useRouter } from "expo-router";
+import { Slot, Stack, useRouter } from "expo-router";
 import { useEffect } from "react";
 
 function RouteGuard( { children }: { children: React.ReactNode } ) {
@@ -7,9 +7,9 @@ function RouteGuard( { children }: { children: React.ReactNode } ) {
 
   useEffect(() => {
     if (!isAuth) {
-      router.replace("/auth");
+      router.replace("/auth/index.tsx");
     }
-  })
+  }, []); //Execute only once when component is mounted
 return <>{children}</>;
 }
 
@@ -19,6 +19,7 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
+    <Slot />
     </RouteGuard>
   );
 }
