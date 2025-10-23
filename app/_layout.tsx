@@ -16,10 +16,10 @@ return <>{children}</>;
 export default function RootLayout() {
   return (
     <RouteGuard>
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
-    <Slot />
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+     
     </RouteGuard>
   );
 }
