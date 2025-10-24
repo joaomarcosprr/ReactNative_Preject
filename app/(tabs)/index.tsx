@@ -4,7 +4,7 @@ export default function Index() {
   return (
     <View style={styles.view} >
 
-      <Text>App carregado com sucesso!</Text>
+      <Text>App loaded successfully</Text>
 
     </View>
   );
